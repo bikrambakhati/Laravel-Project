@@ -1,0 +1,10 @@
+ :root{
+        --primary : #ff1e00fa;
+        }
+     .container{
+        width: 96%;
+        margin: auto
+     }
+     button{
+        cursor: pointer;
+     }
