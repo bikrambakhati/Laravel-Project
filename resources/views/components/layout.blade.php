@@ -16,6 +16,8 @@
 </head>
 
 <body>
+    @include('sweetalert::alert')
+
     <x-header />
     <main>
         {{ $slot }}

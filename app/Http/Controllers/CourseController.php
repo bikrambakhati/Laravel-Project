@@ -21,7 +21,14 @@ class CourseController extends Controller
     $course->name=$request->name;
     $course->price=$request->price;
     $course->description=$request->description;
+    $file=$request->image;
+    if($file){
+        $file_name=time(). "." . $file->getClientOriginalExtension();
+        $file->move("frontend/images",$file_name);
+        $course->image ="frontend/images/".$file_name;
+    }
     $course->save();
+    toast("Course created Succesfully",type:"success");
     return redirect('/course/index');
 
 
@@ -29,6 +36,7 @@ class CourseController extends Controller
 public function delete($id){
 
   Course::find($id)->delete();
+    toast("Course deleted Succesfully",type:"success");
   return redirect("/course/create");
 
 }
@@ -43,7 +51,14 @@ public  function update (Request $request ,$id) {
     $course->name=$request->name;
     $course->price=$request->price;
     $course->description=$request->description;
+     $file=$request->image;
+    if($file){
+        $file_name=time(). "." . $file->getClientOriginalExtension();
+        $file->move("frontend/images",$file_name);
+        $course->image ="frontend/images/".  $file_name;
+    }
     $course->save();
+      toast("Course Updated Succesfully",type:"success");
     return redirect('/course/index');
 
 

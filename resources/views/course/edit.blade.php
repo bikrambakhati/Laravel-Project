@@ -6,7 +6,6 @@
                 <a class="rounded-2xl bg-(--primary) py-2 px-2 text-white" href="/course/create">Back</a>
             </div>
             <form action="/course/update/{{ $course->id }}" method="POST" enctype="multipart/form-data">
-                @method('patch')
                 @csrf
                 <div class="grid grid-cols-2 gap-6">
                     <div>

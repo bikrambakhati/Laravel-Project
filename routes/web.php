@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AdmissionController;
+
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\PageController;
@@ -21,6 +23,17 @@ Route::get('/contact/index',[ContactController::class,"index"] );
 Route::delete('/contact/delete/{id}',[ContactController::class,"delete"] );
 Route::get('/course/edit/{id}',[CourseController::class,"edit"] );
 Route::patch('/course/update/{id}',[CourseController::class,"update"] );
+//..For Courses//
+Route::get('/admission/index',[AdmissionController ::class,"index"] );
+Route::get('/admission/create',[AdmissionController ::class,"create"] );
+Route::post('/admission/store',[AdmissionController ::class,"store"] );
+Route::get('/admission/store',[AdmissionController ::class,"store"] );
+Route::delete('/admission/delete/{id}',[AdmissionController ::class,"delete"] );
+// Route::post('/contact/store',[ContactController::class,"store"] );
+// Route::get('/contact/index',[ContactController::class,"index"] );
+// Route::delete('/contact/delete/{id}',[ContactController::class,"delete"] );
+Route::get('/admission/edit/{id}',[AdmissionController ::class,"edit"] );
+Route::patch('/admission/update/{id}',[AdmissionController ::class,"update"] );
 
 
 
